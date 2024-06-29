@@ -2,6 +2,9 @@
 namespace Classes;
 
 use PHPMailer\PHPMailer\PHPMailer;
+use Dotenv\Dotenv as Dotenv;
+$dotenv = Dotenv::createImmutable('../includes/.env');
+$dotenv->safeLoad();
 
 class Email{
     public $email;
@@ -24,10 +27,10 @@ class Email{
             $email->Port = $_ENV["EMAIL_PORT"];
             $email->Username = $_ENV["EMAIL_USER"];
             $email->Password = $_ENV["EMAIL_PASS"];
-            $email->SMTPSecure = "ssl";
+            $email->SMTPSecure = "tls";
             // Configurar el contenido del email
             $email->setFrom("cuentas@appsalon.com");
-            $email->addAddress("joel.adcascar@gmail.com");
+            $email->addAddress("cuentas@appsalon.com", "appSalon.com");
             $email->Subject = "Confirma tu cuenta";
             // Habilitar HTML
             $email->isHTML(TRUE);
