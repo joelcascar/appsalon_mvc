@@ -26,7 +26,7 @@ class Email{
         $email->SMTPSecure = "ssl";
         // Configurar el contenido del email
         $email->setFrom("cuentas@appsalon.com");
-        $email->addAddress("cuentas@appsalon.com", "appSalon.com");
+        $email->addAddress("joel.adcascar@gmail.com");
         $email->Subject = "Confirma tu cuenta";
         // Habilitar HTML
         $email->isHTML(TRUE);
