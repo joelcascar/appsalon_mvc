@@ -23,7 +23,7 @@ class Email{
         $email->Port = $_ENV["EMAIL_PORT"];
         $email->Username = $_ENV["EMAIL_USER"];
         $email->Password = $_ENV["EMAIL_PASS"];
-        $email->SMTPSecure = "tls";
+        $email->SMTPSecure = "ssl";
         // Configurar el contenido del email
         $email->setFrom("cuentas@appsalon.com");
         $email->addAddress("cuentas@appsalon.com", "appSalon.com");
