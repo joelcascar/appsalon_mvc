@@ -13,8 +13,8 @@
     <input type="submit" class="boton" value="Iniciar sesión">
 </form>
 <div class="acciones">
-    <a href="/index.php/crear-cuenta">¿Aún no tienes cuenta? Crea una</a>
-    <a href="/index.php/olvide">¿Olvidaste tu password?</a>
+    <a href="/crear-cuenta">¿Aún no tienes cuenta? Crea una</a>
+    <a href="/olvide">¿Olvidaste tu password?</a>
 </div>
 
 

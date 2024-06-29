@@ -23,7 +23,7 @@ class ServicioController{
             $alertas = $servicio->validar();
             if(empty($alertas)){
                 $servicio->guardar();
-                header("location: /index.php/servicios");
+                header("location: /servicios");
             }
             
         }
@@ -44,7 +44,7 @@ class ServicioController{
             $alertas = $servicio->validar();
             if(empty($alertas)){
                 $servicio->guardar();
-                header("location: /index.php/servicios");
+                header("location: /servicios");
             }
         }
         $router->render("servicios/actualizar",[
@@ -60,7 +60,7 @@ class ServicioController{
             $id = $_POST["id"];
             $servicio = Servicio::find($id);
             $servicio->eliminar();
-            header("location: /index.php/servicios");
+            header("location: /servicios");
 
         }
     } 

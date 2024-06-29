@@ -30,9 +30,9 @@ class LoginController{
                             //redireccionamiento
                             if($auth->admin === "1"){
                                 $_SESSION["admin"] = $auth->admin ?? null;
-                                header("location: /index.php/admin");
+                                header("location: /admin");
                             } else{
-                                header("location: /index.php/cita");
+                                header("location: /cita");
                             }
                         } else{
                             Usuario::setAlerta("error", "Usuario no encontrado");
@@ -108,7 +108,7 @@ class LoginController{
                 $resultado = $usuario->guardar();
                 // Evaluamos si se actualizo correctamente
                 if($resultado){
-                    header("location: /index.php/");
+                    header("location: /");
                 }
             }
         }
@@ -149,7 +149,7 @@ class LoginController{
                         
                         $resultado = $usuario->guardar();
                         if($resultado){
-                            header("location: /index.php/mensaje");
+                            header("location: /mensaje");
                         }
     
                     }

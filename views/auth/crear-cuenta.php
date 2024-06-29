@@ -1,7 +1,7 @@
 <h1 class="nombre-pagina">Crear Cuenta</h1>
 <p class="descripcion-pagina">Llena el siguiente formulario para crear una cuenta</p>
 <?php include __DIR__ . "/../templates/alertas.php"; ?>
-<form action="/index.php/crear-cuenta" method="POST" class="formulario">
+<form action="/crear-cuenta" method="POST" class="formulario">
     <div class="campo">
         <label for="nombre">Nombre</label>
         <input type="text" id="nombre" placeholder="Tu nombre" name="usuario[nombre]" value="<?php echo s($usuario->nombre); ?>">
@@ -26,5 +26,5 @@
 </form>
 <div class="acciones">
     <a href="/">¿Ya tienes una cuenta? Incia sesión</a>
-    <a href="/index.php/olvide">¿Olvidaste tu password?</a>
+    <a href="/olvide">¿Olvidaste tu password?</a>
 </div>
