@@ -45,9 +45,9 @@ class Email{
             $email->CharSet = "UTF-8";
             // Definimos el contenido
             $contenido = "<html>";
-            $contenido .= "<p> Hola <strong> {$this->nombre} </strong> Has creado tu cuenta en App Salon, solo debes confirmarla presionando el siguiente enlace</p>";
-            $contenido .= "<p> Presiona aquí: <a href=\"{$_ENV["APP_URL"]}/confirmar-cuenta?token={$this->token}\">Confirmar Cuenta</a></p>";
-            $contenido .= "<p> Si tu no solicitaste esta cuenta, puedes ignorar el mensaje</p>";
+            $contenido .= "<p> Hola <strong> {$this->nombre} </strong> Has creado tu cuenta en App Salon, solo debes confirmarla presionando el siguiente enlace </p>";
+            $contenido .= "<p> Presiona aqui: <a href=\"{$_ENV["APP_URL"]}/confirmar-cuenta?token={$this->token}\"> Confirmar Cuenta </a></p>";
+            $contenido .= "<p> Si tu no solicitaste esta cuenta, puedes ignorar el mensaje </p>";
             $contenido .= "</html>";
             $email->Body = $contenido;
             // Enviar el email
@@ -60,7 +60,7 @@ class Email{
 
     public function enviarInstrucciones(){
         try{
-            // Crear el objeto de email
+            //crear el objeto de email
             $email = new PHPMailer();
             // Configurar SMTP
             $email->isSMTP();
