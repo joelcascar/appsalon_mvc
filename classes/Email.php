@@ -22,15 +22,23 @@ class Email{
             $email = new PHPMailer();
             // Configurar SMTP
             $email->isSMTP();
-            $email->Host = $_ENV["EMAIL_HOST"];
+        	//$email->SMTPDebug = 4; // Nivel de depuración
+        	$email->SMTPOptions = array(
+    			'ssl' => array(
+        			'verify_peer' => false,
+        			'verify_peer_name' => false,
+        			'allow_self_signed' => true
+   				 )
+			);
+        	$email->Host = $_ENV["EMAIL_HOST"];
             $email->SMTPAuth = true;
             $email->Port = $_ENV["EMAIL_PORT"];
             $email->Username = $_ENV["EMAIL_USER"];
             $email->Password = $_ENV["EMAIL_PASS"];
-            $email->SMTPSecure = "tls";
+        	$email->SMTPSecure = "tls";
             // Configurar el contenido del email
-            $email->setFrom("cuentas@appsalon.com");
-            $email->addAddress("cuentas@appsalon.com", "appSalon.com");
+            $email->setFrom("appsalon.mvc.c@gmail.com");
+            $email->addAddress($this->email);
             $email->Subject = "Confirma tu cuenta";
             // Habilitar HTML
             $email->isHTML(TRUE);
@@ -56,15 +64,23 @@ class Email{
             $email = new PHPMailer();
             // Configurar SMTP
             $email->isSMTP();
-            $email->Host = $_ENV["EMAIL_HOST"];
+        	//$email->SMTPDebug = 4; // Nivel de depuración
+        	$email->SMTPOptions = array(
+    			'ssl' => array(
+        			'verify_peer' => false,
+        			'verify_peer_name' => false,
+        			'allow_self_signed' => true
+   				 )
+			);
+        	$email->Host = $_ENV["EMAIL_HOST"];
             $email->SMTPAuth = true;
             $email->Port = $_ENV["EMAIL_PORT"];
             $email->Username = $_ENV["EMAIL_USER"];
             $email->Password = $_ENV["EMAIL_PASS"];
-            $email->SMTPSecure = "tls";
+        	$email->SMTPSecure = "tls";
             // Configurar el contenido del email
-            $email->setFrom("cuentas@appsalon.com");
-            $email->addAddress("cuentas@appsalon.com", "appSalon.com");
+            $email->setFrom("appsalon.mvc.c@gmail.com");
+            $email->addAddress($this->email);
             $email->Subject = "Reestablece tu contraseña";
             // Habilitar HTML
             $email->isHTML(true);
